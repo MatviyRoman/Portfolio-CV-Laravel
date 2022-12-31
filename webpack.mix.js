@@ -11,10 +11,24 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/app.js", "public/js").postCss(
-    "resources/css/app.css",
-    "public/css",
-    [
+mix.js("resources/js/app.js", "public/js")
+    .js("resources/js/ie8.js", "public/js")
+    .js("resources/js/init.js", "public/js")
+    .js("resources/js/jquery.js", "public/js")
+    .js("resources/js/modernizr.custom.js", "public/js")
+    .js("resources/js/nicescroll.js", "public/js")
+    .js("resources/js/owl-carousel.js", "public/js")
+    .js("resources/js/typed.js", "public/js")
+    .js("resources/js/waypoints.js", "public/js")
+
+    // .scripts(["resources/js/ie8.js", "resources/js/init.js"], "public/js")
+
+    .postCss("resources/css/base.css", "public/css")
+    .postCss("resources/css/style.css", "public/css")
+    .postCss("resources/css/owl-carousel.css", "public/css")
+    .postCss("resources/css/app.css", "public/css", [
         //
-    ]
-);
+    ]);
+// mix.copy("resources/css/owl-carousel.css", "public/css");
+mix.copy("resources/img/", "public/img");
+mix.copy("resources/svg/", "public/svg");
