@@ -11,14 +11,20 @@ const mix = require("laravel-mix");
  |
  */
 
+//! set path input => output
+const patchInputCSS = "resources/css";
 const patchOutputCSS = "public/css";
+
+const patchInputJS = "resources/js";
 const patchOutputJS = "public/js";
 
 // window.$ = window.jQuery = require("jquery");
 
-mix.copy("resources/js/", patchOutputJS);
+mix.copy(`${patchInputJS}/**/!(app.js)`, patchOutputJS);
+mix.copy("resources/img/", "public/img");
+mix.copy("resources/svg/", "public/svg");
 
-mix.js("resources/js/app.js", patchOutputJS)
+mix.js(`${patchInputJS}/app.js`, patchOutputJS)
     // .js("resources/js/ie8.js", patchOutputJS)
     // .js("resources/js/init.js", patchOutputJS)
     // .js("resources/js/jquery.js", patchOutputJS)
@@ -30,12 +36,10 @@ mix.js("resources/js/app.js", patchOutputJS)
 
     // .scripts(["resources/js/ie8.js", "resources/js/init.js"], patchOutputJS)
 
-    .postCss("resources/css/base.css", patchOutputCSS)
-    .postCss("resources/css/style.css", patchOutputCSS)
-    .postCss("resources/css/owl-carousel.css", patchOutputCSS)
-    .postCss("resources/css/app.css", patchOutputCSS, [
+    .postCss(`${patchInputCSS}/base.css`, patchOutputCSS)
+    .postCss(`${patchInputCSS}/style.css`, patchOutputCSS)
+    .postCss(`${patchInputCSS}/owl-carousel.css`, patchOutputCSS)
+    .postCss(`${patchInputCSS}/app.css`, patchOutputCSS, [
         require("tailwindcss"),
         require("autoprefixer"),
     ]);
-mix.copy("resources/img/", "public/img");
-mix.copy("resources/svg/", "public/svg");

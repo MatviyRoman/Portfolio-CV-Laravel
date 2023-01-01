@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Carbon\Carbon as Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $dateOfBirth = '1987-09-09';
+    $years = Carbon::parse($dateOfBirth)->age;
+
     $res       = [];
-    $res['name'] = 'Roman Matviy';
+    $res['name'] = 'Roman Matvii';
+    $res['dob_years'] = $years;
+    $res['dob_date'] = str_replace('-', ' ', $dateOfBirth);
+
     return view('index', $res);
 });
 

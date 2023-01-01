@@ -9,11 +9,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <meta name="description" content="RM">
-<meta name="author" content="Frenify">
+<meta name="author" content="{{ $name }}">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>RM | Personal Portfolio HTML5 &amp; CSS3 Template</title>
+<title>{{ $name }} | Personal Portfolio</title>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,34 +114,49 @@
 										</tr>
 										<tr>
 											<th>Birthday</th>
-											<th>4th April 1990</th>
+											<th>{{ $dob_date }}</th>
 										</tr>
 										<tr>
 											<th>Age</th>
-											<th>31 years</th>
+											<th>{{ $dob_years }} years</th>
 										</tr>
 										<tr>
-											<th>Address</th>
-											<th>San Francisco</th>
+											<th>Country</th>
+											<th>Ukraine</th>
+										</tr>
+										<tr>
+											<th>City</th>
+											<th>Lviv</th>
 										</tr>
 										<tr>
 											<th>Phone</th>
-											<th><a href="tel:+3846923442364">(+38) 469 2344 2364</a></th>
+											<th><a href="tel:+380938800822">(+38) 093 88 00 822</a></th>
 										</tr>
 										<tr>
 											<th>Email</th>
-											<th><a href="mailto:frenifyteam@gmail.com">frenifyteam@gmail.com</a></th>
+											<th><a href="mailto:roman@matviy.pp.ua">roman@matviy.pp.ua</a></th>
 										</tr>
 										<tr>
 											<th>Skype</th>
-											<th><a href="skype:brucewilson.90">brucewilson.90</a></th>
+											<th><a href="skype:romas6ka">romas6ka</a></th>
 										</tr>
 									</table>
 								</div>
 								<div class="about_right">
-									<!-- Download CV Button -->
+									<!-- Show CV Button -->
+									<div class="RM_fn_cv_btn" style="margin-bottom: 10px;">
+										<a href="https://roman.matviy.pp.ua" target="_blank" title="{{ $name }}">
+											<span class="icon">
+												<img src="img/cv.png" alt="" class="fn__svg" />
+											</span>
+											<span>Show CV</span>
+										</a>
+									</div>
+									<!-- /Show CV Button -->
+
+                                    <!-- Download CV Button -->
 									<div class="RM_fn_cv_btn">
-										<a href="img/cv.jpg" download>
+										<a href="https://apartner.top/pdf/Roman.Matviy.CV.pdf" target="_blank" title="{{ $name }}.CV" download>
 											<span class="icon">
 												<img src="svg/inbox.svg" alt="" class="fn__svg" />
 												<img src="svg/arrow.svg" alt="" class="fn__svg arrow" />
@@ -263,15 +278,23 @@
 										<!-- Progress Bar -->
 										<div class="RM_fn_progress_bar">
 
-											<div class="progress_item" data-value="92">
+											<div class="progress_item" data-value="55">
 												<div class="item_in">
-													<h3 class="progress_title">Adobe Photoshop</h3>
+													<h3 class="progress_title">Laravel</h3>
 													<span class="progress_percent"></span>
 													<div class="bg_wrap"><div class="progress_bg"></div></div>
 												</div>
 											</div>
 
 											<div class="progress_item" data-value="95">
+												<div class="item_in">
+													<h3 class="progress_title">PHP &amp; SQL</h3>
+													<span class="progress_percent"></span>
+													<div class="bg_wrap"><div class="progress_bg"></div></div>
+												</div>
+											</div>
+
+											<div class="progress_item" data-value="90">
 												<div class="item_in">
 													<h3 class="progress_title">HTML5 &amp; CSS3</h3>
 													<span class="progress_percent"></span>
@@ -295,12 +318,20 @@
 												</div>
 											</div>
 
+                                            <div class="progress_item" data-value="92">
+												<div class="item_in">
+													<h3 class="progress_title">Adobe Photoshop</h3>
+													<span class="progress_percent"></span>
+													<div class="bg_wrap"><div class="progress_bg"></div></div>
+												</div>
+											</div>
+
 										</div>
 										<!-- /Progress Bar -->
 
 										<!-- Description -->
 										<div class="RM_fn_desc">
-											<p>A freelance creative designer with a love for minimal design, clean typography and well-written code, located in San Francisco. Provide high quality and cost effective offshore web and software development services. Wide range of web and software development services across the world.</p>
+											<p>A freelance creative designer with a love for minimal design, clean typography and well-written code, located in Lviv, Ukraine. Provide high quality and cost effective offshore web and software development services. Wide range of web and software development services across the world.</p>
 										</div>
 
 									</div>
@@ -785,7 +816,7 @@
 							<!-- /Main Title -->
 
 							<!-- Contact Form -->
-							<form class="contact_form" action="/" method="post" autocomplete="off" data-email="frenifyteam@gmail.com">
+							<form class="contact_form" action="/" method="post" autocomplete="off" data-email="roman@matviy.pp.ua">
 
 								<!--
 									Don't remove below code in avoid to work contact form properly.
@@ -832,10 +863,10 @@
 							<!-- Contact Info -->
 							<div class="RM_fn_contact_info">
 								<p>Address</p>
-								<h3>69 Queen St, London, United Kingdom</h3>
+								<h3>69 Naukova St, Lviv, Ukraine</h3>
 								<p>Phone</p>
-								<h3><a href="tel:+7068980751">(+706) 898-0751</a></h3>
-								<p><a class="fn__link" href="mailto:frenifyteam@gmail.com">frenifyteam@gmail.com</a></p>
+								<h3><a href="tel:+30938800822">(+38) 093 88 00 822</a></h3>
+								<p><a class="fn__link" href="mailto:roman@matviy.pp.ua">roman@matviy.pp.ua</a></p>
 							</div>
 							<!-- /Contact Info -->
 
@@ -855,8 +886,8 @@
 				</div>
 				<div class="footer_content">
 					<div class="container">
-						<p>Copyright © 2021. All rights reserved. <br />
-						Designed &amp; Developed by <a class="fn__link" href="https://frenify.com/" target="_blank">Frenify</a></p>
+						<p>Copyright © {{ date('Y') }}. All rights reserved. <br />
+						Designed &amp; Developed by <a class="fn__link" href="https://apartner.top/" target="_blank">aPartner.Top</a></p>
 					</div>
 				</div>
 			</footer>
@@ -895,9 +926,12 @@
 								<span class="title_in">{{ $name }}</span>
 								<span class="title_in">Web Developer</span>
 								<span class="title_in">Middle Developer</span>
+								<span class="title_in">Fullstack Developer</span>
+								<span class="title_in">Backend Developer</span>
+								<span class="title_in">Frontend Developer</span>
 								<span class="title_in">PHP/SQL Developer</span>
 								<span class="title_in">Freelancer</span>
-								<span class="title_in">Photographer</span>
+								<!-- <span class="title_in">Photographer</span> -->
 							</span>
 						</h3>
 					</div>
@@ -938,12 +972,12 @@
                     @if (false || Route::has('login'))
                         <li>
                             @auth
-                                <a href="{{ url('/dashboard') }}">Dashboard</a>
+                                <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
                             @else
-                                <a href="{{ route('login') }}">Log in</a>
+                                <li><a href="{{ route('login') }}">Log in</a></li>
 
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register') }}">Register</a>
+                                    <li><a href="{{ route('register') }}">Register</a></li>
                                 @endif
                             @endauth
                         </li>
