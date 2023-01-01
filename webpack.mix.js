@@ -11,24 +11,31 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/app.js", "public/js")
-    .js("resources/js/ie8.js", "public/js")
-    .js("resources/js/init.js", "public/js")
-    .js("resources/js/jquery.js", "public/js")
-    .js("resources/js/modernizr.custom.js", "public/js")
-    .js("resources/js/nicescroll.js", "public/js")
-    .js("resources/js/owl-carousel.js", "public/js")
-    .js("resources/js/typed.js", "public/js")
-    .js("resources/js/waypoints.js", "public/js")
+const patchOutputCSS = "public/css";
+const patchOutputJS = "public/js";
 
-    // .scripts(["resources/js/ie8.js", "resources/js/init.js"], "public/js")
+// window.$ = window.jQuery = require("jquery");
 
-    .postCss("resources/css/base.css", "public/css")
-    .postCss("resources/css/style.css", "public/css")
-    .postCss("resources/css/owl-carousel.css", "public/css")
-    .postCss("resources/css/app.css", "public/css", [
-        //
+mix.copy("resources/js/", patchOutputJS);
+
+mix.js("resources/js/app.js", patchOutputJS)
+    // .js("resources/js/ie8.js", patchOutputJS)
+    // .js("resources/js/init.js", patchOutputJS)
+    // .js("resources/js/jquery.js", patchOutputJS)
+    // .js("resources/js/modernizr.custom.js", patchOutputJS)
+    // .js("resources/js/nicescroll.js", patchOutputJS)
+    // .js("resources/js/owl-carousel.js", patchOutputJS)
+    // .js("resources/js/typed.js", patchOutputJS)
+    // .js("resources/js/waypoints.js", patchOutputJS)
+
+    // .scripts(["resources/js/ie8.js", "resources/js/init.js"], patchOutputJS)
+
+    .postCss("resources/css/base.css", patchOutputCSS)
+    .postCss("resources/css/style.css", patchOutputCSS)
+    .postCss("resources/css/owl-carousel.css", patchOutputCSS)
+    .postCss("resources/css/app.css", patchOutputCSS, [
+        require("tailwindcss"),
+        require("autoprefixer"),
     ]);
-// mix.copy("resources/css/owl-carousel.css", "public/css");
 mix.copy("resources/img/", "public/img");
 mix.copy("resources/svg/", "public/svg");
