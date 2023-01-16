@@ -1,4 +1,4 @@
-const mix = require("laravel-mix");
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,39 +14,41 @@ const mix = require("laravel-mix");
 // mix.config.publicPath = "public_html";
 
 //! public path
-const public = "public";
+const public = 'public';
 
 //! set path input => output
-const patchInputCSS = "resources/css";
-const patchOutputCSS = public + "/css";
+const patchInputCSS = 'resources/css';
+const patchOutputCSS = public + '/css';
 
-const patchInputJS = "resources/js";
-const patchOutputJS = public + "/js";
+const patchInputJS = 'resources/js';
+const patchOutputJS = public + '/js';
 
 // window.$ = window.jQuery = require("jquery");
 
 mix.copy(`${patchInputJS}/**/!(app.js)`, patchOutputJS);
-mix.copy("resources/img/", public + "/img");
-mix.copy("resources/svg/", public + "/svg");
+mix.copy('resources/img/', public + '/img');
+mix.copy('resources/svg/', public + '/svg');
 
 mix.js(`${patchInputJS}/app.js`, patchOutputJS)
-    // .js("resources/js/ie8.js", patchOutputJS)
-    // .js("resources/js/init.js", patchOutputJS)
-    // .js("resources/js/jquery.js", patchOutputJS)
-    // .js("resources/js/modernizr.custom.js", patchOutputJS)
-    // .js("resources/js/nicescroll.js", patchOutputJS)
-    // .js("resources/js/owl-carousel.js", patchOutputJS)
-    // .js("resources/js/typed.js", patchOutputJS)
-    // .js("resources/js/waypoints.js", patchOutputJS)
+	// .js("resources/js/ie8.js", patchOutputJS)
+	// .js("resources/js/init.js", patchOutputJS)
+	// .js("resources/js/jquery.js", patchOutputJS)
+	// .js("resources/js/modernizr.custom.js", patchOutputJS)
+	// .js("resources/js/nicescroll.js", patchOutputJS)
+	// .js("resources/js/owl-carousel.js", patchOutputJS)
+	// .js("resources/js/typed.js", patchOutputJS)
+	// .js("resources/js/waypoints.js", patchOutputJS)
 
-    // .scripts(["resources/js/ie8.js", "resources/js/init.js"], patchOutputJS)
+	// .scripts(["resources/js/ie8.js", "resources/js/init.js"], patchOutputJS)
 
-    .postCss(`${patchInputCSS}/base.css`, patchOutputCSS)
-    .postCss(`${patchInputCSS}/style.css`, patchOutputCSS)
-    .postCss(`${patchInputCSS}/owl-carousel.css`, patchOutputCSS)
-    .postCss(`${patchInputCSS}/app.css`, patchOutputCSS, [
-        require("tailwindcss"),
-        require("autoprefixer"),
-    ]);
+	.postCss(`${patchInputCSS}/base.css`, patchOutputCSS)
+	.postCss(`${patchInputCSS}/style.css`, patchOutputCSS)
+	.postCss(`${patchInputCSS}/owl-carousel.css`, patchOutputCSS)
+	.postCss(`${patchInputCSS}/app.css`, patchOutputCSS, [
+		require('tailwindcss'),
+		require('autoprefixer'),
+	]);
 
-mix.copy("public", "htdocs");
+// mix.copy("public", "htdocs");
+mix.copy('resources/views/dashboard/dist', 'public/dashboard/dist');
+mix.copy('resources/views/dashboard/plugins', 'public/dashboard/plugins');

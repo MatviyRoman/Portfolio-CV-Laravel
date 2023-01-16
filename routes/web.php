@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Carbon\Carbon as Carbon;
 
@@ -14,6 +15,10 @@ use Carbon\Carbon as Carbon;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
     $dateOfBirth = '1987-09-09';
     $years = Carbon::parse($dateOfBirth)->age;
@@ -26,8 +31,36 @@ Route::get('/', function () {
     return view('index', $res);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+
+//! test page
+Route::get('/test', function () {
+    return view('dashboard/test');
 })->middleware(['auth'])->name('dashboard');
+
+
+//! admin page
+Route::get('admin', function () {
+    // dd($this->user);
+    // return view('dashboard/index');
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('admin');
+
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+//! settings page
+Route::get('/admin/settings', function () {
+    return view('settings');
+})->middleware(['auth'])->name('dashboard');
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 require __DIR__.'/auth.php';
