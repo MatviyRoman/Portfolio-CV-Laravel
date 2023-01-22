@@ -28,15 +28,22 @@ Route::get('/', function () {
     $res['dob_years'] = $years;
     $res['dob_date'] = str_replace('-', ' ', $dateOfBirth);
 
-    return view('auth/register', $res);
+    return view('index', $res);
 });
 
+
+//! test page
+Route::get('/test', function () {
+    return view('dashboard/test');
+})->middleware(['auth'])->name('dashboard');
+
+
 //! admin page
-Route::get('dashboard', function () {
+Route::get('admin', function () {
     // dd($this->user);
     // return view('dashboard/index');
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('admin');
 
 
 // Route::get('/dashboard', function () {

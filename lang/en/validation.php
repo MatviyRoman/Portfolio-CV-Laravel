@@ -157,16 +157,10 @@ return [
     |
     */
 
-    // 'custom' => [
-    //     'attribute-name' => [
-    //         'rule-name' => 'custom-message',
-    //     ],
-    // ],
-
     'custom' => [
-            'first_name' => [
-            'required' => 'Por favor complete este campo'
-            ]
+        'attribute-name' => [
+            'rule-name' => 'custom-message',
+        ],
     ],
 
     /*

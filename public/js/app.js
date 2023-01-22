@@ -22340,10 +22340,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/css/normalize.css":
-/*!*************************************!*\
-  !*** ./resources/css/normalize.css ***!
-  \*************************************/
+/***/ "./resources/css/base.css":
+/*!********************************!*\
+  !*** ./resources/css/base.css ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -22353,10 +22353,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/base.css":
-/*!********************************!*\
-  !*** ./resources/css/base.css ***!
-  \********************************/
+/***/ "./resources/css/style.css":
+/*!*********************************!*\
+  !*** ./resources/css/style.css ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/owl-carousel.css":
+/*!****************************************!*\
+  !*** ./resources/css/owl-carousel.css ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -26532,8 +26545,9 @@ const toJSONObject = (obj) => {
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/base": 0,
-/******/ 			"css/normalize": 0
+/******/ 			"css/owl-carousel": 0,
+/******/ 			"css/style": 0,
+/******/ 			"css/base": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -26583,10 +26597,11 @@ const toJSONObject = (obj) => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/base","css/normalize"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/base","css/normalize"], () => (__webpack_require__("./resources/css/normalize.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/base","css/normalize"], () => (__webpack_require__("./resources/css/base.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/base","css/normalize"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/owl-carousel","css/style","css/base"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/owl-carousel","css/style","css/base"], () => (__webpack_require__("./resources/css/base.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/owl-carousel","css/style","css/base"], () => (__webpack_require__("./resources/css/style.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/owl-carousel","css/style","css/base"], () => (__webpack_require__("./resources/css/owl-carousel.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/owl-carousel","css/style","css/base"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
